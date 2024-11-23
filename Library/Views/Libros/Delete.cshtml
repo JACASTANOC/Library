@@ -1,0 +1,64 @@
+﻿@model Library.Models.Libro
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>ELIMINAR REGISTRO</h2>
+
+<h3>¿Estás seguro de eliminar el registro del libro?</h3>
+<div>
+    <h4>Libro</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Autor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Autor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ISBN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ISBN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnioPublicacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnioPublicacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CopiasDisponibles)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CopiasDisponibles)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Volver al Inicio", "Index")
+        </div>
+    }
+</div>

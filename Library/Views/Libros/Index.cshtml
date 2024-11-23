@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Library.Models.Libro>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Registro Nuevo</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Autor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ISBN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnioPublicacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CopiasDisponibles)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Titulo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Autor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ISBN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AnioPublicacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CopiasDisponibles)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.LibroId }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.LibroId }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.LibroId })
+        </td>
+    </tr>
+}
+
+</table>

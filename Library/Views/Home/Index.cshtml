@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "Página Principal";
+}
+
+<main>
+    <section class="row text-center" aria-labelledby="welcomeTitle">
+        <h1 id="welcomeTitle" class="mb-4">Sistema de Gestión de Biblioteca</h1>
+        <p class="lead">Bienvenido al sistema de gestión de bibliotecas de la universidad. Aquí puedes acceder a tus recursos, gestionar préstamos y explorar nuestro catálogo.</p>
+        <p><a href="@Url.Action("Index", "Estudiantes")" class="btn btn-primary btn-lg">Registrar Estudiante &raquo;</a></p>
+    </section>
+
+    <div class="row mt-5">
+        <!-- Tarjeta 1: Catálogo -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="@Url.Content("~/Content/images/catalogo.png")" class="card-img-top" alt="Imagen de Catálogo">
+                <div class="card">
+                    <img src="~/Content/images/libros.jpg" class="card-img-top" alt="Catálogo de Libros">
+                    <div class="card-body">
+                        <h5 class="card-title">Catálogo de Libros</h5>
+                        <p class="card-text">Consulta los libros disponibles en la biblioteca y encuentra el material que necesitas.</p>
+                        <a href="@Url.Action("Index", "Libros")" class="btn btn-primary">Ver Catálogo</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Tarjeta 2: Préstamos -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="@Url.Content("~/Content/images/prestamos.png")" class="card-img-top" alt="Imagen de Préstamos">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Gestión de Préstamos</h5>
+                    <p class="card-text">Administra tus préstamos, consulta fechas de vencimiento y renueva libros fácilmente desde tu cuenta.</p>
+                    <a href="/Prestamos" class="btn btn-outline-primary">Gestionar Préstamos &raquo;</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tarjeta 3: Ayuda -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="@Url.Content("~/Content/images/ayuda.png")" class="card-img-top" alt="Imagen de Ayuda">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Soporte y Ayuda</h5>
+                    <p class="card-text">¿Tienes problemas? Nuestro equipo está aquí para ayudarte. Consulta nuestra sección de preguntas frecuentes o contáctanos directamente.</p>
+                    <a href="/Ayuda" class="btn btn-outline-primary">Obtener Ayuda &raquo;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
